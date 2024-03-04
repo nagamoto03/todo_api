@@ -9,6 +9,11 @@ class TasksController < ApplicationController
     head  :created
   end
 
+  def destroy
+    Task.find(params[:id]).destroy
+    head :ok
+  end
+
   private
 
   def task_params
